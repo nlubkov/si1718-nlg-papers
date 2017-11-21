@@ -120,7 +120,7 @@ app.post(BASE_API_PATH + "/papers", function (request, response) {
 
 
 //POST over a single resource
-app.post(BASE_API_PATH + "/Papers/:title", function (request, response, next) {
+app.post(BASE_API_PATH + "/papers/:title", function (request, response, next) {
     var name = request.params.title;
     console.log("WARNING: New POST request to /Papers/" + name + ", sending 405...");
     response.sendStatus(405); // method not allowed
@@ -128,14 +128,14 @@ app.post(BASE_API_PATH + "/Papers/:title", function (request, response, next) {
 
 
 //PUT over a collection
-app.put(BASE_API_PATH + "/Papers", function (request, response) {
+app.put(BASE_API_PATH + "/papers", function (request, response) {
     console.log("WARNING: New PUT request to /Papers, sending 405...");
     response.sendStatus(405); // method not allowed
 });
 
 
 //PUT over a single resource
-app.put(BASE_API_PATH + "/Papers/:name", function (request, response) {
+app.put(BASE_API_PATH + "/papers/:name", function (request, response) {
     var updatedPapers = request.body;
     var name = request.params.name;
     if (!updatedPapers) {
